@@ -1,0 +1,21 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Set<Character> vowels = new HashSet<>();
+        StringBuilder str = new StringBuilder();
+        for (char ch : "aoyeui".toCharArray()) {
+            vowels.add(ch);
+        }
+        Scanner scanner = new Scanner(System.in);
+        String str_2 = scanner.nextLine();
+        char[] char_symbol = str_2.toCharArray();
+        for (int i = 0; i < str_2.length(); i++) {
+            char_symbol[i] = Character.toLowerCase(char_symbol[i]);
+            if (!vowels.contains(char_symbol[i])) {
+                str.append(".").append(char_symbol[i]);
+            }
+        }
+       System.out.print(str);
+    }
+}
